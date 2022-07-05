@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="E:\Ky6\Java5\Project\SU22B1_SOF3021_IT16304-master"/>
+			<item value="F:\Ky6\Java5\Project\SU22B1_SOF3021_IT16304"/>
+			<item value="E:\TRY HARD\Ky5\java4_Web_app\Project\PH13621_MaTheDat_Lab5_300322"/>
+			<item value="E:\Ky6\Java5\Project\SU22B1_SOF3021_IT16304"/>
+			<item value="E:\Ky5\java4_Web_app\Project\SP22B2_SOF3011_IT16302-master"/>
+			<item value="E:\Ky5\java4_Web_app\Project\PH13621_MaTheDat_Lab5_300322"/>
+			<item value="E:\Ky5\java4_Web_app\Project\Lab5"/>
+			<item value="E:\Ky6\Java5\Project\su22b1_it16304_sof3021"/>
+			<item value="E:\Ky6\Java5\Project\Datmtph13621"/>
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="611"/>
+		<item key="DIALOG_Y_ORIGIN" value="274"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+</section>

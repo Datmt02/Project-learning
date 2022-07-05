@@ -1,0 +1,230 @@
+<div class="p-3"  ng-hide="chckad == -1">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" 
+            id="user-tab" 
+            data-bs-toggle="tab" 
+            data-bs-target="#user" 
+            type="button" role="tab" 
+            aria-controls="user" 
+            aria-selected="true">
+            Người dùng</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" 
+            data-bs-toggle="tab" 
+            data-bs-target="#quizz" 
+            type="button" role="tab" 
+            aria-controls="quizz" 
+            aria-selected="false">
+            Câu hỏi</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent" style="background-color: white;">
+        <div class="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user-tab">
+            <form ng-submit="onFormSubmit($event)"
+                action=""
+                class="col-8 offset-2 pt-2"
+                style="color: black;">
+                <div class="form-group mt-3">
+                    <label for="">Email</label>
+                    <input class="form-control"
+                        type="text"
+                        ng-model="student.email">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Tên người dùng</label>
+                    <input class="form-control"
+                        type="text"
+                        ng-model="student.name">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Mật khẩu</label>
+                    <input class="form-control"
+                        ng-model="student.password">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Chức vụ</label>
+                    <input class="form-control"
+                        ng-model="student.chucvu">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Ảnh</label>
+                    <input class="form-control"
+                        type="file"
+                        id="filePath"
+                        ng-model="student.avt">
+                </div>
+                <div class="form-group mt-3">
+                    <button class="btn btn-primary" ng-hide="index != -1">Lưu</button>
+                    <button ng-show="index !=-1"  class="btn btn-primary" >Sửa</button>
+                    <button type="reset"
+                        class="btn btn-outline-primary ml-3" ng-click="clear()">
+                        Xóa form
+                    </button>                
+                </div>
+            </form>
+            <table class="table mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Tên người dùng</th>
+                        <th>Password</th>
+                        <th>Chức vụ</th>
+                        <th>avt</th>
+                        <th colspan="2">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="sv in List_student">
+                        <td>{{sv.id}}</td>
+                        <td>{{sv.email}}</td>
+                        <td>{{sv.name}}</td>
+                        <td>{{sv.password}}</td>
+                        <td>{{sv.chucvu}}</td>
+                        <td>{{sv.avt}}</td>
+                        <td>
+                            <button class="btn btn-primary"  ng-click="edit($index)">Sửa</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modal_delete_{{sv.id}}" ng-click="edit($index)">
+                                Xóa
+                            </button>
+                            <div class="modal fade" id="modal_delete_{{sv.id}}"
+                                tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Xóa</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Xác nhận xóa?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Đóng</button>
+                                            <button type="button"
+                                                ng-click="Delete($index)"
+                                                class="btn btn-danger " data-bs-dismiss="modal">
+                                                Xóa
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- question -->
+        <div class="tab-pane fade " id="quizz" role="tabpanel" aria-labelledby="quizz-tab">
+            <form action=""
+                ng-submit="onFormSubmitquiz($event)"
+                class="col-8 offset-2 pt-2"
+                style="color: black;">
+                <div class="form-group mt-3">
+                    <label for="">Câu hỏi</label>
+                    <textarea class="form-control" id="Textarea1" 
+                    rows="3"
+                    ng-model="quiz.document"></textarea>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Đáp án 1:</label>
+                    <input class="form-control"
+                        type="text"
+                        ng-model="quiz.qs1">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Đáp án 2:</label>
+                    <input class="form-control"
+                        type="text"
+                        ng-model="quiz.qs2">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Đáp án 3:</label>
+                    <input class="form-control"
+                        type="text"
+                        ng-model="quiz.qs3">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Đáp án 4:</label>
+                    <input class="form-control"
+                        type="text"
+                        ng-model="quiz.qs4">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Câu trả lời:</label>
+                    <input class="form-control"
+                        type="number"
+                        ng-model="quiz.da">
+                </div>
+                <div class="form-group mt-3">
+                    <button class="btn btn-primary" ng-hide="indexqz !=-1">Lưu</button>
+                    <button ng-show="indexqz !=-1"  class="btn btn-primary" >Sửa</button>
+                    <button type="reset"
+                        class="btn btn-outline-primary ml-3" ng-click="clearquiz()">
+                        Xóa form
+                    </button>                
+                </div>
+            </form>
+            <table class="table mt-3">
+                <thead>
+                    <tr>
+                        <th>Câu hỏi</th>
+                        <th colspan="7">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="qz in List_quiz">
+                        <td>{{qz.document}}</td>
+                        <td>
+                            <button class="btn btn-primary"  ng-click="editquiz($index)">Sửa</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modal_quizz_{{qz.id}}" ng-click="editquiz($index)">
+                                Xóa
+                            </button>
+                            <div class="modal fade" id="modal_quizz_{{qz.id}}"
+                                tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalquiz">Xóa</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Xác nhận xóa?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Đóng</button>
+                                            <button type="button"
+                                                ng-click="Deletequiz($index)"
+                                                class="btn btn-danger " data-bs-dismiss="modal">
+                                                Xóa
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div ng-hide="chckad != -1" class="col-3 ms-auto me-auto text-center " style="height: 730px;">
+    <img src="images/logo.png" alt="" width="95%">
+</div>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;su22b1_it16304_sof3021.beans.cartModel&apos; to &apos;CartModel&apos;&#x0D;&#x0A;- Original project: &apos;su22b1_it16304_sof3021&apos;&#x0D;&#x0A;- Original element: &apos;su22b1_it16304_sof3021.beans.cartModel&apos;&#x0D;&#x0A;- Renamed element: &apos;su22b1_it16304_sof3021.beans.CartModel&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;cartModel&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;su22b1_it16304_sof3021.beans{cartModel.java[cartModel" matchStrategy="1" name="CartModel" qualified="false" references="true" similarDeclarations="false" stamp="1655909062534" textual="false" version="1.0"/>
+</session>
