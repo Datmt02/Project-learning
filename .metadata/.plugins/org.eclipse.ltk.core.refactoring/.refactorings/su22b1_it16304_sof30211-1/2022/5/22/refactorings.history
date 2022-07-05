@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy package &apos;su22b1_it16304_sof30211&apos; to &apos;su22b1_it16304_sof30211/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;su22b1_it16304_sof30211-1&apos;&#x0D;&#x0A;- Destination element: &apos;su22b1_it16304_sof30211/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;su22b1_it16304_sof30211-1/src/main/java/su22b1_it16304_sof30211&apos;" description="Copy package" destination="=su22b1_it16304_sof30211/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;su22b1_it16304_sof30211" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1653616316970" version="1.0"/>
-</session>
