@@ -1,0 +1,8 @@
+package su22b1_it16304_sof30211.entities;
+
+import lombok.Data;
+
+@Data
+public class Account {
+
+}

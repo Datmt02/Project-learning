@@ -1,0 +1,76 @@
+package su22b1_it16304_sof3021.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import su22b1_it16304_sof3021.beans.CategoryModel;
+import su22b1_it16304_sof3021.entities.Category;
+import su22b1_it16304_sof3021.entities.Product;
+import su22b1_it16304_sof3021.repositories.CategoryRepository;
+import su22b1_it16304_sof3021.repositories.ProductRepository;
+
+
+
+@Controller
+public class HelloController {
+	@Autowired
+	public ProductRepository repository;
+	@Autowired
+	public CategoryRepository categoryRepo;
+	@GetMapping("home")
+	public String index(
+			Model model
+	) {
+		String view = "/views/home.jsp";
+		model.addAttribute("views", view);
+		return "/layout";
+	}
+	@GetMapping("findpro")
+	public String findpro(
+			Model model
+	) {
+		Category cate = (Category) model.getAttribute("category");
+		System.out.println(cate);
+		
+		
+		return"/layout";
+	}
+	@GetMapping("products")
+	public String products(
+			Model model
+	) {
+		List<Product> items = this.repository.findAll();
+		List<Category> cateLst = this.categoryRepo.findAll();
+		
+		String view = "/views/products.jsp";
+		model.addAttribute("views", view);
+		model.addAttribute("items", items);
+		model.addAttribute("cateLst", cateLst);
+		return "/layout";
+	}
+	@GetMapping("logout")
+	public String logout(
+			Model model,
+			HttpSession session
+	) {
+		session.removeAttribute("user");
+		session.setAttribute("lgSuccess", "Đăng xuất thành công");
+		
+		return "redirect:/home";
+	}
+	
+}

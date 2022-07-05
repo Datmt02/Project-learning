@@ -1,0 +1,24 @@
+1653835424704	Rename package 'su22.sof3021.repositories'
+1653835432757	Rename package 'su22.sof3021.entities'
+1653835438638	Rename package 'su22.sof3021.demo_bean_config'
+1653835447623	Rename package 'su22.sof3021.controllers.admin'
+1653835463510	Rename package 'su22.sof3021.controllers'
+1653835473015	Rename package 'su22.sof3021.configuration'
+1653835479304	Rename package 'su22.sof3021.beans'
+1653835996989	Delete elements
+1653836014664	Delete elements
+1653836633038	Rename resource 'Login.jsp'
+1653837108064	Rename package 'su22.sof3021.repositories'
+1653837118475	Rename package 'su22.sof3021.entities'
+1653837127117	Rename package 'su22.sof3021.demo_bean_config'
+1653837134536	Rename package 'su22.sof3021.controllers.admin'
+1653837140200	Rename package 'su22.sof3021.configuration'
+1653874836927	Delete element
+1653874860716	Move compilation unit
+1653874864910	Delete element
+1653874898981	Rename type 'CategoryDAO'
+1653875127138	Rename type 'OrderDetail'
+1653974052391	Rename resource 'layout.jsp'
+1653974122854	Rename resource 'index.jsp'
+1653974130988	Rename resource 'create.jsp'
+1653974161502	Move 'index.jsp' to 'accounts'
